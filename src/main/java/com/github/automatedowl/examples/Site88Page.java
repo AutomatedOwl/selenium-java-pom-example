@@ -50,7 +50,7 @@ public class Site88Page {
 	@FindBy(className = "smile-image")
 	private WebElement smileImage;
 	
-    @FindBy(id = "amazingText")
+        @FindBy(id = "amazingText")
 	private WebElement feedbackText;
 	
 	/////////////////////////////////////////////////////////////////////////////////
@@ -92,7 +92,7 @@ public class Site88Page {
 		return feedbackText;
 	}
 
-    public String getURL() {
-        return URL;
-    }
+        public String getURL() {
+                return URL;
+        }
 }
