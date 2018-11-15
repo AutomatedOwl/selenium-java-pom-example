@@ -77,4 +77,17 @@
             <version>4.1.0</version>
         </dependency>
     </dependencies>
+    <reporting>
+        <excludeDefaults>true</excludeDefaults>
+        <plugins>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <configuration>
+                    <reportVersion>2.8.1</reportVersion>
+                </configuration>
+                <version>2.9</version>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>
