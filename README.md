@@ -1,6 +1,6 @@
 # selenium-java-pom-example
 
-This example currently supports Linux and Windows, both with Java 8+, Maven and Chrome browser of version 69-71 installed.
+This example currently supports Linux and Windows, both with Java 8 and above, Maven and Chrome browser of version 69-71 installed.
 
 To run on Windows, simply clone the repository and from root project diectory run:
 ```
