@@ -1,6 +1,7 @@
 package com.github.automatedowl.examples.drivers;
 
 import com.google.inject.AbstractModule;
+import org.apache.tika.utils.SystemUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -28,6 +29,11 @@ public class DriverModule extends AbstractModule {
     }
 
     public static String getChromedriverPath() {
+        if (SystemUtils.IS_OS_WINDOWS) {
+          return System.getProperty("user.dir")
+                  + "/src/main/java/com/github/automatedowl" +
+                  "/examples/drivers/executable/chromedriver.exe";
+        }
         return System.getProperty("user.dir")
                 + "/src/main/java/com/github/automatedowl" +
                 "/examples/drivers/executable/chromedriver";
