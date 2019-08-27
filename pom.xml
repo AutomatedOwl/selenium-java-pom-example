@@ -18,7 +18,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.22.1</version>
+                    <version>3.0.0-M3</version>
                     <configuration>
                         <suiteXmlFiles>
                             <suiteXmlFile>default_tests.xml</suiteXmlFile>
@@ -26,7 +26,10 @@
                         <argLine>
                             -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                         </argLine>
-                    </configuration>
+                   <forkCount>3</forkCount>
+                   <reuseForks>true</reuseForks>
+                   <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+                   </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
