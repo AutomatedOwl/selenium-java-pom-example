@@ -7,6 +7,7 @@ import com.github.automatedowl.examples.pages.Site88PageThreadLocal;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 
 public abstract class WebHostTestCase {
 
@@ -23,7 +24,7 @@ public abstract class WebHostTestCase {
     /////////////////////////////// TestNG Methods //////////////////////////////////
     /////////////////////////////////////////////////////////////////////////////////
 
-    @BeforeClass
+    @BeforeMethod
     void setTestConfiguration() {
         logger.info("Setting up WebHostTests..");
         threadLocalDriver = new ThreadLocalDriver();
