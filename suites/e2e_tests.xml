@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-    <test name="Test" time-out="3600000" parallel="methods" thread-count="2">
+<suite name="E2E Suite">
+    <test name="E2E Test" >
         <classes>
-            <class name="com.github.automatedowl.examples.WebHostTest"/>
+            <class name="com.github.automatedowl.examples.tests.WebHostTests"/>
         </classes>
     </test>
 </suite>

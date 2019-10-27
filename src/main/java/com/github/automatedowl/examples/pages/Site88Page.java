@@ -1,4 +1,4 @@
-package com.github.automatedowl.examples;
+package com.github.automatedowl.examples.pages;
 
 import java.util.List;
 import org.openqa.selenium.By;
@@ -13,7 +13,7 @@ public class Site88Page {
 	/** Default timeout of waiting for web elements in the page. */
 	private final int DEFAULT_ELEMENT_TIMEOUT = 30;
 	private final String XPATH_CHILD_ELEMENTS_LOCATOR = ".//*";
-	private final String URL = "http://testjs.site88.net";
+	private final String URL = "https://testjs2.000webhostapp.com/";
 
 	/////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////// Constructor /////////////////////////////////////

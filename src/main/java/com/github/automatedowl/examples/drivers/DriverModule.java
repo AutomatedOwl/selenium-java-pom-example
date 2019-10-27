@@ -2,7 +2,6 @@ package com.github.automatedowl.examples.drivers;
 
 import com.google.inject.AbstractModule;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.tika.utils.SystemUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 

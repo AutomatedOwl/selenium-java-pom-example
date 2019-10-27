@@ -1,19 +1,16 @@
-package com.github.automatedowl.examples.drivers;
+package com.github.automatedowl.examples.pages;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
 import org.openqa.selenium.WebDriver;
 
-public class ThreadLocalDriver {
+public class Site88PageThreadLocal {
 
-    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+    private static ThreadLocal<Site88Page> site88Page = new ThreadLocal<>();
 
-    public ThreadLocalDriver() {
-        Injector i = Guice.createInjector(new DriverModule());
-        driver.set(i.getInstance(WebDriver.class));
+    public Site88PageThreadLocal(WebDriver driver) {
+        site88Page.set(new Site88Page(driver));
     }
 
-    public WebDriver getDriver() {
-        return this.driver.get();
+    public Site88Page getSite88Page() {
+        return this.site88Page.get();
     }
 }

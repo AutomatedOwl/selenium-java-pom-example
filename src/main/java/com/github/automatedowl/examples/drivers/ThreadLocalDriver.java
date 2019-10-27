@@ -9,8 +9,8 @@ public class ThreadLocalDriver {
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     public ThreadLocalDriver() {
-        Injector i = Guice.createInjector(new DriverModule());
-        driver.set(i.getInstance(WebDriver.class));
+        Injector injector = Guice.createInjector(new DriverModule());
+        driver.set(injector.getInstance(WebDriver.class));
     }
 
     public WebDriver getDriver() {
