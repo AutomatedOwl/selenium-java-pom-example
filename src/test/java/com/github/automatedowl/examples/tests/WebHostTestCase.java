@@ -5,6 +5,8 @@ import java.util.logging.Logger;
 import com.github.automatedowl.examples.drivers.ThreadLocalDriver;
 import com.github.automatedowl.examples.pages.Site88PageThreadLocal;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -19,6 +21,9 @@ public abstract class WebHostTestCase {
 
     // Define timeout before closing browser after test.
     protected final int BROWSER_WAIT_MILLISECONDS = 4000;
+
+    // 2 seconds delay time
+    protected final int TWO_SECONDS_DELAY = 2000;
 
     /////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////// TestNG Methods //////////////////////////////////
@@ -43,6 +48,20 @@ public abstract class WebHostTestCase {
 
     protected void waitBeforeClosingBrowser() throws InterruptedException {
         Thread.sleep(BROWSER_WAIT_MILLISECONDS);
+    }
+    protected void twoSecondsDelay() throws InterruptedException {
+        Thread.sleep(TWO_SECONDS_DELAY);
+    }
+
+    protected void performClickAndDelay(WebElement link, WebDriver driver) throws InterruptedException {
+
+        twoSecondsDelay();
+        Actions actions = new Actions(driver);
+        actions.moveToElement(link);
+        logger.info(link.getAttribute("href"));
+        link.click();
+        actions.click();
+        twoSecondsDelay();
     }
 
     protected WebDriver getDriver() {

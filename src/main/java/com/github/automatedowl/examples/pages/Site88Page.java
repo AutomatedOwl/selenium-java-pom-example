@@ -33,6 +33,15 @@ public class Site88Page {
 	@FindBy(className = "title-image")
 	private WebElement imageTitle;
 
+	@FindBy(xpath="//a[@href = 'contact.html']")
+	private WebElement contact;
+
+	@FindBy(xpath="//a[@href = 'news.html']")
+	private WebElement news;
+
+	//@FindBy(xpath="//a[@href = 'contact.html']")
+
+
 	/** Define the web element of title image by class name. */
 	@FindBy(className = "topnav")
 	private WebElement navBar;
@@ -50,7 +59,7 @@ public class Site88Page {
 	@FindBy(className = "smile-image")
 	private WebElement smileImage;
 	
-        @FindBy(id = "amazingText")
+	@FindBy(id = "amazingText")
 	private WebElement feedbackText;
 	
 	/////////////////////////////////////////////////////////////////////////////////
@@ -64,6 +73,12 @@ public class Site88Page {
 	public WebElement getImageTitle() {
 		return imageTitle;
 	}
+
+	public WebElement getContact() { return contact;}
+
+	public WebElement getNews() {return news;}
+
+
 	
 	public WebElement getNewsLink() {
 		List<WebElement> navLinks = 
@@ -74,6 +89,13 @@ public class Site88Page {
 				.contains("news"))
 				.findFirst()
 				.orElse(null);
+	}
+
+	public List<WebElement> getNavLinks() {
+		List<WebElement> navLinks =
+				navBar.findElements(By.tagName("a"));
+		return navLinks;
+
 	}
 
 	public WebElement getTextBox() {
@@ -87,6 +109,11 @@ public class Site88Page {
 	public WebElement getSmileImage() {
 		return smileImage;
 	}
+
+	public List<WebElement> getNavBarLinks() {
+		List<WebElement> navLinks = navBar.findElements(By.xpath(XPATH_CHILD_ELEMENTS_LOCATOR));
+		return  navLinks; }
+
 
 	public WebElement getTextAfterSubmit() {
 		return feedbackText;

@@ -16,6 +16,7 @@ public class DriverModule extends AbstractModule {
         // Set Chromedriver executable path.
         setChromedriverPath();
 
+
         // Bind WebDriver object to ChromeDriver.
         bind(WebDriver.class).toInstance(new ChromeDriver());
     }
