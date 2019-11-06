@@ -9,7 +9,7 @@ public class WebHostTests extends WebHostTestCase {
 
 
     @Test
-    public void test3() throws InterruptedException {
+    public void basicNavBarButtonsTest() throws InterruptedException {
 
         // Navigate to URL.
         getDriver().get(site88Page.getSite88Page().getURL());
