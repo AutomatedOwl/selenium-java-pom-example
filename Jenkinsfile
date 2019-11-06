@@ -4,7 +4,7 @@ pipeline {
             label "automation-tests-slave"
             containerTemplate {
                 name "k8s-slave-jdk12-alpine"
-                image e2e-tests:1.0.2"
+                image "e2e-tests:1.0.2"
                 ttyEnabled true
                 command 'cat'
             }
