@@ -53,17 +53,6 @@ public abstract class WebHostTestCase {
         Thread.sleep(TWO_SECONDS_DELAY);
     }
 
-    protected void performClickAndDelay(WebElement link, WebDriver driver) throws InterruptedException {
-
-        twoSecondsDelay();
-        Actions actions = new Actions(driver);
-        actions.moveToElement(link);
-        logger.info(link.getAttribute("href"));
-        link.click();
-        actions.click();
-        twoSecondsDelay();
-    }
-
     protected WebDriver getDriver() {
         return threadLocalDriver.getDriver();
     }
