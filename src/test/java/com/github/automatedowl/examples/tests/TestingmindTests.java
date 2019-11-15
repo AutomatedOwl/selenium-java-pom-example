@@ -28,7 +28,7 @@ public class TestingmindTests extends TestingmindTestCase {
 
         // Click on download link.
         seleniumDownloadKPI.fileDownloadKPI(testingMindPage.getTestingMindPage().getDownloadLink(),
-                   "test-file", false);
+                   "test-file", true);
 
         // Wait before closing browser..
         waitBeforeClosingBrowser();

@@ -17,10 +17,8 @@ public class DriverModule extends AbstractModule {
     /** Configure method. It binds a selected type of BrowserDriver. */
     protected synchronized void configure() {
 
-        SeleniumDownloadKPI seleniumDownloadKPI =
-                new SeleniumDownloadKPI("/tmp/downloads");
         ChromeOptions chromeOptions =
-                seleniumDownloadKPI.generateDownloadFolderCapability();
+                SeleniumDownloadKPI.generateDownloadFolderCapability("/tmp/mounted");
 
         // Bind WebDriver object to ChromeDriver.
         try {
