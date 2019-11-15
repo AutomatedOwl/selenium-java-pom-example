@@ -1,32 +1,32 @@
 pipeline {
     agent {
         kubernetes {
-            label "automation-tests-slave"
+            label "test-runner"
             containerTemplate {
-                name "k8s-slave-jdk12-alpine"
-                image "e2e-tests:1.0.2"
+                name "e2e-tests-container"
+                image "automatedowl/e2e-tests:1.0.2"
                 ttyEnabled true
                 command 'cat'
             }
         }
     }
     stages {
+        stage('Prerequisites') {
+            steps {
+                container('e2e-tests-container') {
+                    sh 'apt update && apt install maven git -y'
+                }
+            }
+        }
         stage('Git Status') {
             steps {
                 sh 'git status'
                 echo 'Received Git Status.'
             }
         }
-        stage("Prerequisites") {
-            steps {
-                container('k8s-slave-jdk12-alpine') {
-                    sh 'apk update && apk add maven git'
-                }
-            }
-        }
         stage("Build Default") {
             steps {
-                container('k8s-slave-jdk12-alpine') {
+                container('e2e-tests-container') {
                     sh "mvn test"
                 }
             }

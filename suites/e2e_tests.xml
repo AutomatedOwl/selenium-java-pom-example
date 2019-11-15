@@ -3,7 +3,7 @@
 <suite name="E2E Suite">
     <test name="E2E Test" >
         <classes>
-            <class name="com.github.automatedowl.examples.tests.WebHostTests"/>
+            <class name="com.github.automatedowl.examples.tests.TestingmindTests"/>
         </classes>
     </test>
 </suite>

@@ -9,7 +9,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
-public abstract class WebHostTestCase {
+public abstract class TestingmindTestCase {
 
     protected ThreadLocalDriver threadLocalDriver;
     protected Logger logger = Logger.getGlobal();
@@ -26,14 +26,14 @@ public abstract class WebHostTestCase {
 
     @BeforeMethod
     void setTestConfiguration() {
-        logger.info("Setting up WebHostTests..");
+        logger.info("Setting up TestingmindTests..");
         threadLocalDriver = new ThreadLocalDriver();
         site88Page = new Site88PageThreadLocal(getDriver());
     }
 
     @AfterMethod
     void closeBrowser() {
-        logger.info("Tearing down WebHostTests..");
+        logger.info("Tearing down TestingmindTests..");
         getDriver().quit();
     }
 
