@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-public class Site88Page {
+public class TestingMindPage {
 
 	/** Default timeout of waiting for web elements in the page. */
 	private final int DEFAULT_ELEMENT_TIMEOUT = 30;
@@ -19,7 +19,7 @@ public class Site88Page {
 	/////////////////////////////// Constructor /////////////////////////////////////
 	/////////////////////////////////////////////////////////////////////////////////
 
-	public Site88Page(WebDriver driver) {
+	public TestingMindPage(WebDriver driver) {
 		PageFactory.initElements(
 				new AjaxElementLocatorFactory(
 				        driver, DEFAULT_ELEMENT_TIMEOUT), this);
@@ -49,9 +49,9 @@ public class Site88Page {
 	
 	@FindBy(className = "smile-image")
 	private WebElement smileImage;
-	
-        @FindBy(id = "amazingText")
-	private WebElement feedbackText;
+
+	@FindBy(xpath = "//span[text()='Download Test File']")
+	private WebElement downloadLink;
 	
 	/////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////// Getters /////////////////////////////////////////
@@ -88,8 +88,8 @@ public class Site88Page {
 		return smileImage;
 	}
 
-	public WebElement getTextAfterSubmit() {
-		return feedbackText;
+	public WebElement getDownloadLink() {
+		return downloadLink;
 	}
 
         public String getURL() {

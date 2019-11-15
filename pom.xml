@@ -65,6 +65,11 @@
             <version>3.141.59</version>
         </dependency>
         <dependency>
+            <groupId>com.github.automatedowl</groupId>
+            <artifactId>selenium-download-kpi</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
             <version>4.1.0</version>

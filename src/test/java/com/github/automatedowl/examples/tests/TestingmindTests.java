@@ -1,17 +1,34 @@
 package com.github.automatedowl.examples.tests;
 
+import com.github.automatedowl.tools.SeleniumDownloadKPI;
 import org.testng.annotations.Test;
 
 public class TestingmindTests extends TestingmindTestCase {
 
+    private SeleniumDownloadKPI seleniumDownloadKPI = new SeleniumDownloadKPI("/tmp/mounted");
+
     @Test
-    public void site88Test() throws InterruptedException {
+    void site88Test() throws InterruptedException {
 
         // Navigate to URL.
-        getDriver().get(site88Page.getSite88Page().getURL());
+        getDriver().get(testingMindPage.getTestingMindPage().getURL());
 
         // Type 'Hello World' to text box.
-        site88Page.getSite88Page().getTextBox().sendKeys("Hello TestingMind !");
+        testingMindPage.getTestingMindPage().getTextBox().sendKeys("Hello TestingMind !");
+
+        // Wait before closing browser..
+        waitBeforeClosingBrowser();
+    }
+
+    @Test
+    void downloadTest() throws InterruptedException {
+
+        // Navigate to URL.
+        getDriver().get(testingMindPage.getTestingMindPage().getURL());
+
+        // Click on download link.
+        seleniumDownloadKPI.fileDownloadKPI(testingMindPage.getTestingMindPage().getDownloadLink(),
+                   "test-file", false);
 
         // Wait before closing browser..
         waitBeforeClosingBrowser();
