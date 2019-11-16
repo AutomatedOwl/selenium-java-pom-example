@@ -18,12 +18,12 @@ public class DriverModule extends AbstractModule {
     protected synchronized void configure() {
 
         ChromeOptions chromeOptions =
-                SeleniumDownloadKPI.generateDownloadFolderCapability("/tmp/mounted");
+                new ChromeOptions();
 
         // Bind WebDriver object to ChromeDriver.
         try {
             bind(WebDriver.class).toInstance(new RemoteWebDriver(
-                    new URL("http://10.0.0.20:31300/wd/hub"), chromeOptions));
+                    new URL("http://10.0.0.20:31112/wd/hub"), chromeOptions));
         }
         catch (MalformedURLException e) {
             e.printStackTrace();
