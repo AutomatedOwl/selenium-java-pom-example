@@ -28,6 +28,7 @@ public abstract class TestingmindTestCase {
         logger.info("Setting up TestingmindTests..");
         threadLocalDriver = new ThreadLocalDriver();
         testingMindPage = new TestingMindPageThreadLocal(getDriver());
+        getDriver().manage().window().maximize();
     }
 
     @AfterMethod
