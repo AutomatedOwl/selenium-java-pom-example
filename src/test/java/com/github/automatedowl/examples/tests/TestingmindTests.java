@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class TestingmindTests extends TestingmindTestCase {
 
-    private SeleniumDownloadKPI seleniumDownloadKPI = new SeleniumDownloadKPI("/tmp/mounted");
+    private SeleniumDownloadKPI seleniumDownloadKPI = new SeleniumDownloadKPI("/home/seluser/Downloads");
 
     @Test
     void site88Test() throws InterruptedException {
