@@ -5,9 +5,7 @@ import java.net.URL;
 import java.util.concurrent.CountDownLatch;
 import java.util.logging.Logger;
 
-import com.github.automatedowl.examples.drivers.ThreadLocalDriver;
 import com.github.automatedowl.examples.pages.TestingMindPage;
-import com.github.automatedowl.examples.pages.TestingMindPageThreadLocal;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -21,17 +19,12 @@ public class SeleniumThread implements Runnable {
     private CountDownLatch latch;
     private Thread thread;
     private String threadName;
-    private ThreadLocalDriver threadLocalDriver;
-    private TestingMindPageThreadLocal testingMindPage;
     private WebDriver driver;
     
-    public SeleniumThread(String name, ThreadLocalDriver driver, CountDownLatch latch) {
+    public SeleniumThread(String name, CountDownLatch latch) {
         System.out.println("Creating " + name);
-        this.threadLocalDriver = driver;
         this.latch = latch;
         this.threadName = name;
-        this.testingMindPage =
-                new TestingMindPageThreadLocal(this.driver);
     }
 
     public void run() {
