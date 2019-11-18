@@ -20,7 +20,7 @@ public class TestingmindTest extends TestingmindTestCase {
 
         // Create executor.
         ExecutorService seleniumThreadsExecutor =
-                Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+                Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
         for (int i=0; i < NUMBER_OF_THREADS; i++) {
             seleniumThreadsExecutor.execute(new SeleniumThread("Selenium Thread " + i, latch));
