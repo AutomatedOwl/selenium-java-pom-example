@@ -34,7 +34,6 @@ public class TestingmindTestCase {
     @AfterMethod
     void closeBrowser() {
         logger.info("Tearing down TestingmindTest..");
-        getDriver().quit();
     }
 
     /////////////////////////////////////////////////////////////////////////////////

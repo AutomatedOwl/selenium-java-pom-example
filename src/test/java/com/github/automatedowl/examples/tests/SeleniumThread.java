@@ -82,6 +82,6 @@ public class SeleniumThread implements Runnable {
     }
 
     protected void waitBeforeClosingBrowser() throws InterruptedException {
-        Thread.sleep(90000);
+        Thread.sleep(150000);
     }
 }

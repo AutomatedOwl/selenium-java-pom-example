@@ -23,8 +23,7 @@ public class TestingmindTest extends TestingmindTestCase {
                 Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
         for (int i=0; i < NUMBER_OF_THREADS; i++) {
-            seleniumThreadsExecutor.execute(new SeleniumThread("Selenium Thread " + i,
-                    threadLocalDriver, latch));
+            seleniumThreadsExecutor.execute(new SeleniumThread("Selenium Thread " + i, latch));
         }
         latch.await(120, TimeUnit.SECONDS);
         seleniumThreadsExecutor.shutdown();
