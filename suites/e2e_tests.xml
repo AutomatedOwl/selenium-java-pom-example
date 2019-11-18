@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="E2E Suite">
+<suite name="E2E Suite" parallel="methods" thread-count="5">
     <test name="E2E Test" >
         <classes>
-            <class name="com.github.automatedowl.examples.tests.TestingmindTests"/>
+            <class name="com.github.automatedowl.examples.tests.TestingmindTests">
+                    <methods>
+                        <include name="firstTest" />
+                        <include name="secondTest" />
+                        <include name="thirdTest" />
+                        <include name="fourthTest" />
+                        <include name="fifthTest" />
+                    </methods>
+            </class>
         </classes>
     </test>
 </suite>

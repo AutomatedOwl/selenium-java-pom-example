@@ -17,7 +17,7 @@ public abstract class TestingmindTestCase {
     protected TestingMindPageThreadLocal testingMindPage;
 
     // Define timeout before closing browser after test.
-    protected final int BROWSER_WAIT_MILLISECONDS = 4000;
+    protected final int BROWSER_WAIT_MILLISECONDS = 90000;
 
     /////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////// TestNG Methods //////////////////////////////////
