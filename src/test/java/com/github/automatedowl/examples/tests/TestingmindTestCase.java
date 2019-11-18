@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-public abstract class TestingmindTestCase {
+public class TestingmindTestCase {
 
     protected ThreadLocalDriver threadLocalDriver;
     protected Logger logger = Logger.getGlobal();
@@ -17,7 +17,7 @@ public abstract class TestingmindTestCase {
     protected TestingMindPageThreadLocal testingMindPage;
 
     // Define timeout before closing browser after test.
-    protected final int BROWSER_WAIT_MILLISECONDS = 90000;
+    protected final int BROWSER_WAIT_MILLISECONDS = 4000;
 
     /////////////////////////////////////////////////////////////////////////////////
     /////////////////////////////// TestNG Methods //////////////////////////////////
@@ -25,7 +25,7 @@ public abstract class TestingmindTestCase {
 
     @BeforeMethod
     void setTestConfiguration() {
-        logger.info("Setting up TestingmindTests..");
+        logger.info("Setting up TestingmindTest..");
         threadLocalDriver = new ThreadLocalDriver();
         testingMindPage = new TestingMindPageThreadLocal(getDriver());
         getDriver().manage().window().maximize();
@@ -33,7 +33,7 @@ public abstract class TestingmindTestCase {
 
     @AfterMethod
     void closeBrowser() {
-        logger.info("Tearing down TestingmindTests..");
+        logger.info("Tearing down TestingmindTest..");
         getDriver().quit();
     }
 
