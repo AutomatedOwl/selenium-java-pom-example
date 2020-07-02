@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.automatedowl</groupId>
     <artifactId>selenium-java-pom-example</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <properties>
         <aspectj.version>1.9.1</aspectj.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -36,8 +36,8 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.8.1</version>
                     <configuration>
-                        <source>12</source>
-                        <target>12</target>
+                        <source>1.8</source>
+                        <target>1.8</target>
                     </configuration>
                 </plugin>
             </plugins>
