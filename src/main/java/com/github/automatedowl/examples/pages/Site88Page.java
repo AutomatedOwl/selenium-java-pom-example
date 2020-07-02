@@ -13,7 +13,7 @@ public class Site88Page {
 	/** Default timeout of waiting for web elements in the page. */
 	private final int DEFAULT_ELEMENT_TIMEOUT = 30;
 	private final String XPATH_CHILD_ELEMENTS_LOCATOR = ".//*";
-	private final String URL = "https://testjs2.000webhostapp.com/";
+	private final String URL = "http://testjs.epizy.com/";
 
 	/////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////// Constructor /////////////////////////////////////
