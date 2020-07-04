@@ -11,7 +11,7 @@ public class WebHostTests extends WebHostTestCase {
         getDriver().get(site88Page.getSite88Page().getURL());
 
         // Type 'Hello World' to text box.
-        site88Page.getSite88Page().getTextBox().sendKeys("Hello World");
+        site88Page.getSite88Page().getTextBox().sendKeys("Hello World Java");
 
         // Wait before closing browser..
         waitBeforeClosingBrowser();
